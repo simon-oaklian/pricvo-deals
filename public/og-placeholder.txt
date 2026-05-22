@@ -1,0 +1,2 @@
+Place a 1200x630px image named og-default.png in this folder.
+Recommended: white background, Pricvo logo centered, tagline below.

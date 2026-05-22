@@ -1,0 +1,41 @@
+# Secrets/local env
+.env
+.env.*
+!.env.local.example
+*secret*
+*secrets*
+*credential*
+*credentials*
+*token*
+*oauth*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Runtime/build/dependencies
+node_modules/
+.next/
+out/
+dist/
+build/
+.vercel/
+
+# Data/storage
+storage/
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+*.sql
+
+# Logs/cache
+*.log
+logs/
+.cache/
+
+# Local/editor/system
+.DS_Store
+._*
+.vscode/
+.cursor/
