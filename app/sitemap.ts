@@ -1,8 +1,10 @@
 import type { MetadataRoute } from "next";
 import { getAllPublishedDeals } from "@/lib/deals";
+import { getAllBlogPosts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const deals = getAllPublishedDeals();
+  const posts = getAllBlogPosts();
   const now = new Date();
 
   const staticPages: MetadataRoute.Sitemap = [
@@ -11,6 +13,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "daily",
       priority: 1.0
+    },
+    {
+      url: "https://pricvo.com/blog",
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.7
     },
     {
       url: "https://pricvo.com/category/bathroom-vanity",
@@ -51,5 +59,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8
   }));
 
-  return [...staticPages, ...dealPages];
+  const blogPages: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `https://pricvo.com/blog/${post.slug}`,
+    lastModified: new Date(post.updatedAt || post.publishedAt),
+    changeFrequency: "monthly" as const,
+    priority: 0.65
+  }));
+
+  return [...staticPages, ...dealPages, ...blogPages];
 }
