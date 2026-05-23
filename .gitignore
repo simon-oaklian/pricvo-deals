@@ -39,3 +39,7 @@ logs/
 ._*
 .vscode/
 .cursor/
+
+# Generated SEO article content/assets
+content/seo-posts/
+public/seo-uploads/
