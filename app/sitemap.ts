@@ -15,12 +15,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0
     },
     {
-      url: "https://pricvo.com/blog",
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.7
-    },
-    {
       url: "https://pricvo.com/category/bathroom-vanity",
       lastModified: now,
       changeFrequency: "daily",
