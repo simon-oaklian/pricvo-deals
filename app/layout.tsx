@@ -67,7 +67,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={dmSans.variable}>
-      <body className="font-sans">{children}</body>
+      <body className={"font-sans"}>
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "cf9d0e8147904a269923c5f3cd7b4087"}'
+        />{children}</body>
     </html>
   );
 }
